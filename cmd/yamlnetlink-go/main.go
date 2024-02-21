@@ -12,10 +12,10 @@ import (
 func main() {
 	log.SetFlags(0)
 
-	pFlag := flag.String("p", "", "optional: specify a package name for the generated code (default: use YAML netlink spec name)")
+	pFlag := flag.String("p", "/home/vgrinber/workspc/yamlnetlink/dpll.yaml", "optional: specify a package name for the generated code (default: use YAML netlink spec name)")
 	flag.Parse()
 
-	path := flag.Arg(0)
+	path := "/home/vgrinber/workspc/yamlnetlink/dpll.yaml" //flag.Arg(0)
 	if path == "" {
 		log.Fatal("must specify a YAML netlink file:\n$ yamlnetlink-go nlctrl.yaml")
 	}

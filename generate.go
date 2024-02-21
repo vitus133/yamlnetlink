@@ -3,7 +3,6 @@ package yamlnetlink
 import (
 	"bytes"
 	"fmt"
-	"go/format"
 	"io"
 	"strings"
 
@@ -38,7 +37,8 @@ func Generate(s *Spec, cfg *Config) ([]byte, error) {
 		g.op(op)
 	}
 
-	return format.Source(b.Bytes())
+	//return format.Source(b.Bytes())
+	return b.Bytes(), nil
 }
 
 // A generator generates code from a Spec and writes it to w.
